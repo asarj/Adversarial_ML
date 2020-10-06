@@ -203,7 +203,7 @@ if __name__ == "__main__":
     epochs = 50
     limit = 5
     verbose = 1
-    model_path = "mnist_model.pt"
+    model_path = "data/mnist_model.pt"
 
     cnn = CNN(dataset=mnist, epochs=epochs, limit=limit, verbose=verbose)
 

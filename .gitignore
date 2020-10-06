@@ -141,4 +141,4 @@ cython_debug/
 
 # Project specific
 data/
-mnist_model.pt
+data/mnist_model.pt
