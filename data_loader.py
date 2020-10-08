@@ -80,7 +80,7 @@ class ImageDataset():
 
             elif type == "TORCH_MNIST":
                 self.train = torchvision.datasets.MNIST("./data", transform=None, download=True, train=True)
-                self.x_train = self.train.data.numpy()
+                self.x_train = self.train.data.numpy() / 255.0
                 self.y_train = self.train.targets.numpy()
 
                 self.shape = list(self.x_train.shape)
@@ -89,13 +89,13 @@ class ImageDataset():
                 print("Unique Classes: ", self.num_classes)
 
                 self.test = torchvision.datasets.MNIST("./data", transform=None, download=True, train=False)
-                self.x_test = self.test.data.numpy()
+                self.x_test = self.test.data.numpy() / 255.0
                 self.y_test = self.test.targets.numpy()
 
-                print("Preprocessing train and validation data...")
-                self.normalize_image_pixels(self.x_train)
-                print("Preprocessing test data...")
-                self.normalize_image_pixels(self.x_test)
+                # print("Preprocessing train and validation data...")
+                # self.preprocess_normalize_only(self.x_train)
+                # print("Preprocessing test data...")
+                # self.preprocess_normalize_only(self.x_test)
 
                 self.train = torch.utils.data.TensorDataset(torch.FloatTensor(self.x_train),
                                                             torch.LongTensor(self.y_train))
@@ -332,12 +332,12 @@ class ImageDataset():
         """
 
         # for normalizing pixels
-        # return np.divide(image, 255.0)
+        return np.divide(image, 255.0)
 
         # for converting images to zero mean and unit variance
         # formula: z-score = x - mean / std
         # return (image - image.mean()) / image.std()
-        return np.divide(np.subtract(image, np.mean(image)), np.std(image))
+        # return np.divide(np.subtract(image, np.mean(image)), np.std(image))
 
 
 if __name__ == "__main__":
