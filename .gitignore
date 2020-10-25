@@ -142,3 +142,4 @@ cython_debug/
 # Project specific
 data/
 data/mnist_model.pt
+OpenDVC/BasketballPass/
