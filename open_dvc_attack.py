@@ -28,7 +28,7 @@ classifier = TensorFlowClassifier(
 
 # Step 4: Train the ART classifier
 
-classifier.fit(x_train, y_train, batch_size=64, nb_epochs=3)
+classifier.fit(x_train, y_train, batch_size=4, nb_epochs=3)
 
 # Step 5: Evaluate the ART classifier on benign test examples
 
