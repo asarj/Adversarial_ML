@@ -163,3 +163,8 @@ OpenDVC/__pycache__/
 OpenDVC/compression-1.0/
 OpenDVC/libbpg-0.9.5.tar.gz
 OpenDVC/libbpg-0.9.5/
+OpenDVC/BasketballPass_bin_MS-SSIM_32/
+OpenDVC/BasketballPass_bin_PSNR_1024/
+OpenDVC/BasketballPass_com_MS-SSIM_32/
+OpenDVC/BasketballPass_com_PSNR_1024/
+OpenDVC/models/
